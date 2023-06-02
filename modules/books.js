@@ -33,4 +33,12 @@ export class BookStore {
         },
       ];
     }
+
+    add(book) {
+        this.store.push(book);
+      }
+    
+    remove(id) {
+        this.store = this.store.filter((item) => item.id !== id);
+      }
 }  
