@@ -268,3 +268,7 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.datetime {
+  color: red;
+}

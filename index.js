@@ -1,6 +1,6 @@
 import { BookStore } from './books.js';
 import { loadBooksCollection, loadContacts } from './modules/booksFunction.js';
-import { getCurrentDate } from './modules/CurrentDate.js'
+import { getCurrentDate } from './modules/CurrentDate.js';
 
 const newBookStorage = new BookStore();
 
