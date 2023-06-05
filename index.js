@@ -1,6 +1,6 @@
 import BookStore from './modules/books.js';
 import { loadBooksCollection, loadContacts } from './modules/booksFunction.js';
-import { getCurrentDate } from './modules/CurrentDate.js';
+import getCurrentDate from './modules/CurrentDate.js';
 
 const newBookStorage = new BookStore();
 
@@ -16,7 +16,7 @@ loadBooksCollection();
 // add books
 const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
-const addButton = document.querySelector('#add-book-button');  
+const addButton = document.querySelector('#add-book-button');
 addButton.addEventListener('click', (e) => {
   e.preventDefault();
   let newid;

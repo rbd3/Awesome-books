@@ -18,8 +18,8 @@ export const loadBooksCollection = () => {
   </div>`;
 
   const bookContainer = document.querySelector('.books-container');
-  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join(''); 
-    // remove button
+  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
+  // remove button
   const removeButtons = document.querySelectorAll('.remove-button');
   removeButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -29,26 +29,27 @@ export const loadBooksCollection = () => {
       localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store));
     });
   });
-}
+};
 
-export const loadContacts = () => {
-    loopingContacts = (contact) => `<div class="contact-card">
-    <div class="contact-image ${contact.classImage}"></div>
-    <div class="contact-name text-center">${contact.name}</div>
-    <div class="contact-details">
-      <a class="contact-link" target="_blank" href="${contact.githubLink}">
-        <i class="fab fa-github-square fa-fw fa-2xl"></i>
-      </a>
-      <a class="contact-link" target="_blank" href="${contact.linkedLink}">
-        <i class="fab fa-linkedin fa-fw fa-2xl"></i>
-      </a>
-      <a class="contact-link" target="_blank" href="${contact.instagramLink}">
-        <i class="fab fa-instagram-square fa-fw fa-2xl"></i>
-      </a>
-    </div>
-  </div>`;
+export function loadContacts(contactInstanceFromContact) {
+  function loopingContacts(contact) {
+    return `<div class="contact-card">
+      <div class="contact-image ${contact.classImage}"></div>
+      <div class="contact-name text-center">${contact.name}</div>
+      <div class="contact-details">
+        <a class="contact-link" target="_blank" href="${contact.githubLink}">
+          <i class="fab fa-github-square fa-fw fa-2xl"></i>
+        </a>
+        <a class="contact-link" target="_blank" href="${contact.linkedLink}">
+          <i class="fab fa-linkedin fa-fw fa-2xl"></i>
+        </a>
+        <a class="contact-link" target="_blank" href="${contact.instagramLink}">
+          <i class="fab fa-instagram-square fa-fw fa-2xl"></i>
+        </a>
+      </div>
+    </div>`;
+  }
 
   const contactWrapper = document.querySelector('.contact-wrapper');
-
   contactWrapper.innerHTML = newBookStorage.contacts.map((contact) => loopingContacts(contact)).join('');
 }
