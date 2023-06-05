@@ -7,8 +7,8 @@ if (bookStorage !== null) {
   newBookStorage.store = bookStorage;
 }
 
-export function loadBooksCollection() {
-  function loopingBook(book) {
+export const loadBooksCollection = () => {
+  const loopingBook = (book) => {
     return `<div id="${book.id}" class="book-card">
       <p class="book-details">
           "${book.title}" 
@@ -30,7 +30,7 @@ export function loadBooksCollection() {
       localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store));
     });
   });
-}
+};
 
 export function loadContacts() {
   function loopingContacts(contact) {
