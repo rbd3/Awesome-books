@@ -8,7 +8,7 @@ if (bookStorage !== null) {
 }
 
 export function loadBooksCollection() {
-  function loopingBook (book) {
+function loopingBook (book) {
     return `<div id="${book.id}" class="book-card">
       <p class="book-details">
           "${book.title}" 
@@ -16,8 +16,7 @@ export function loadBooksCollection() {
           ${book.author}
       </p>
       <button class="remove-button" data-book="${book.id}">Remove</button>
-      </div>`;
-  
+      </div>`;  
   }
   const bookContainer = document.querySelector('.books-container');
   bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
@@ -31,7 +30,7 @@ export function loadBooksCollection() {
       localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store));
     });
   });
-};
+}
 
 export function loadContacts() {
   function loopingContacts(contact) {
