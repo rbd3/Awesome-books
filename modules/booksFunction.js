@@ -8,7 +8,7 @@ if (bookStorage !== null) {
 }
 
 export const loadBooksCollection = () => {
-  const loopingBook = (book) => { return `<div id="${book.id}" class="book-card">
+  const loopingBook = (book) => `<div id="${book.id}" class="book-card">
   <p class="book-details">
       "${book.title}" 
       by 
@@ -16,7 +16,6 @@ export const loadBooksCollection = () => {
   </p>
   <button class="remove-button" data-book="${book.id}">Remove</button>
   </div>`;
-  }
 
   const bookContainer = document.querySelector('.books-container');
   bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
@@ -26,7 +25,7 @@ export const loadBooksCollection = () => {
   const removeButtons = document.querySelectorAll('.remove-button');
   removeButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      let id = Number(button.getAttribute('data-book'));
+      const id = Number(button.getAttribute('data-book'));
       newBookStorage.remove(id);
       loadBooksCollection();
       localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store));

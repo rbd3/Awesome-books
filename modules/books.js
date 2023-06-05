@@ -35,10 +35,10 @@ export default class BookStore {
   }
 
   add(book) {
-      this.store.push(book);
-    }
-  
-  remove(id) {
-      this.store = this.store.filter((item) => item.id !== id);
-    }
+    this.store.push(book);
+  }
+
+ remove(id) {
+    this.store = this.store.filter((item) => item.id !== id);
+  }
 }  
