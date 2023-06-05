@@ -1,4 +1,4 @@
-import BookStore from './books';
+import BookStore from './books.js';
 
 const newBookStorage = new BookStore();
 
@@ -18,10 +18,8 @@ export const loadBooksCollection = () => {
   </div>`;
 
   const bookContainer = document.querySelector('.books-container');
-  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
-  
+  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join(''); 
     // remove button
-  
   const removeButtons = document.querySelectorAll('.remove-button');
   removeButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -34,7 +32,7 @@ export const loadBooksCollection = () => {
 }
 
 export const loadContacts = () => {
-    loopingContacts = (contact) => { return `<div class="contact-card">
+    loopingContacts = (contact) => `<div class="contact-card">
     <div class="contact-image ${contact.classImage}"></div>
     <div class="contact-name text-center">${contact.name}</div>
     <div class="contact-details">
@@ -49,7 +47,6 @@ export const loadContacts = () => {
       </a>
     </div>
   </div>`;
-}
 
   const contactWrapper = document.querySelector('.contact-wrapper');
 

@@ -13,11 +13,10 @@ if (bookStorage !== null) {
 }
 
 loadBooksCollection();
-  // add books
+// add books
 const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
-const addButton = document.querySelector('#add-book-button');
-  
+const addButton = document.querySelector('#add-book-button');  
 addButton.addEventListener('click', (e) => {
   e.preventDefault();
   let newid;

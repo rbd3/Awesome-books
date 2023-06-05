@@ -38,7 +38,7 @@ export default class BookStore {
     this.store.push(book);
   }
 
- remove(id) {
+  remove(id) {
     this.store = this.store.filter((item) => item.id !== id);
   }
-}  
+} 
