@@ -1,10 +1,10 @@
-import BookStore from './books.js';
+import BookStore from './books.js'
 
-const newBookStorage = new BookStore();
+const newBookStorage = new BookStore()
 
-const bookStorage = JSON.parse(localStorage.getItem('bookCollection'));
+const bookStorage = JSON.parse(localStorage.getItem('bookCollection'))
 if (bookStorage !== null) {
-  newBookStorage.store = bookStorage;
+  newBookStorage.store = bookStorage
 }
 
 export const loadBooksCollection = () => {
@@ -16,24 +16,24 @@ export const loadBooksCollection = () => {
           ${book.author}
       </p>
       <button class="remove-button" data-book="${book.id}">Remove</button>
-      </div>`;
+      </div>`
   }
-  const bookContainer = document.querySelector('.books-container');
-  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
+  const bookContainer = document.querySelector('.books-container')
+  bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('')
   // remove button
-  const removeButtons = document.querySelectorAll('.remove-button');
+  const removeButtons = document.querySelectorAll('.remove-button')
   removeButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const id = Number(button.getAttribute('data-book'));
-      newBookStorage.remove(id);
-      loadBooksCollection();
-      localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store));
-    });
-  });
-};
+      const id = Number(button.getAttribute('data-book'))
+      newBookStorage.remove(id)
+      loadBooksCollection()
+      localStorage.setItem('bookCollection', JSON.stringify(newBookStorage.store))
+    })
+  })
+}
 
-export function loadContacts() {
-  function loopingContacts(contact) {
+export function loadContacts () {
+  function loopingContacts (contact) {
     return `<div class="contact-card">
       <div class="contact-image ${contact.classImage}"></div>
       <div class="contact-name text-center">${contact.name}</div>
@@ -48,9 +48,9 @@ export function loadContacts() {
           <i class="fab fa-instagram-square fa-fw fa-2xl"></i>
         </a>
       </div>
-    </div>`;
+    </div>`
   }
 
-  const contactWrapper = document.querySelector('.contact-wrapper');
-  contactWrapper.innerHTML = newBookStorage.contacts.map((contact) => loopingContacts(contact)).join('');
+  const contactWrapper = document.querySelector('.contact-wrapper')
+  contactWrapper.innerHTML = newBookStorage.contacts.map((contact) => loopingContacts(contact)).join('')
 }
