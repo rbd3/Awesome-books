@@ -7,16 +7,18 @@ if (bookStorage !== null) {
   newBookStorage.store = bookStorage;
 }
 
-export const loadBooksCollection = () => {
-  const loopingBook = (book) => `<div id="${book.id}" class="book-card">
-  <p class="book-details">
-      "${book.title}" 
-      by 
-      ${book.author}
-  </p>
-  <button class="remove-button" data-book="${book.id}">Remove</button>
-  </div>`;
-
+export function loadBooksCollection() {
+  function loopingBook (book) {
+    return `<div id="${book.id}" class="book-card">
+      <p class="book-details">
+          "${book.title}" 
+          by 
+          ${book.author}
+      </p>
+      <button class="remove-button" data-book="${book.id}">Remove</button>
+      </div>`;
+  
+  }
   const bookContainer = document.querySelector('.books-container');
   bookContainer.innerHTML = newBookStorage.store.map((book) => loopingBook(book)).join('');
   // remove button
@@ -31,7 +33,7 @@ export const loadBooksCollection = () => {
   });
 };
 
-export function loadContacts(contactInstanceFromContact) {
+export function loadContacts() {
   function loopingContacts(contact) {
     return `<div class="contact-card">
       <div class="contact-image ${contact.classImage}"></div>
