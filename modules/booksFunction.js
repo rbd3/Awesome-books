@@ -32,8 +32,8 @@ export const loadBooksCollection = () => {
   })
 }
 
-export function loadContacts () {
-  function loopingContacts (contact) {
+export const loadContacts = () => {
+  const loopingContacts = (contact) => {
     return `<div class="contact-card">
       <div class="contact-image ${contact.classImage}"></div>
       <div class="contact-name text-center">${contact.name}</div>
