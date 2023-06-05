@@ -1,4 +1,4 @@
-import { BookStore } from './books.js';
+import BookStore from './books';
 
 const newBookStorage = new BookStore();
 

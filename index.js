@@ -1,4 +1,4 @@
-import { BookStore } from './modules/books';
+import BookStore from './modules/books.js';
 import { loadBooksCollection, loadContacts } from './modules/booksFunction.js';
 import { getCurrentDate } from './modules/CurrentDate.js';
 
