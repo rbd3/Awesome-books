@@ -8,7 +8,7 @@ if (bookStorage !== null) {
 }
 
 export function loadBooksCollection() {
-  function loopingBook (book) {
+  function loopingBook(book) {
     return `<div id="${book.id}" class="book-card">
       <p class="book-details">
           "${book.title}" 
